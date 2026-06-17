@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { ArrowRight } from 'lucide-react';
 
 const Hero = () => {
   const containerVariants = {
@@ -18,96 +19,76 @@ const Hero = () => {
     }
   };
 
+  const cards = [
+    { title: 'Scientific Products', label: 'PURCHASE' },
+    { title: 'Analytical Testing', label: 'ANALYZE' },
+    { title: 'Research & Dev.', label: 'EXECUTE' },
+  ];
+
   return (
-    <section className="w-full bg-white relative font-sans">
-      {/* Promo Banner (Matches exact styling of target photo) */}
-      <div className="w-full bg-white pt-4 pb-2 hidden md:block">
-        <div className="max-w-[1600px] mx-auto px-6 lg:px-12 flex justify-center items-center gap-12">
-          <p className="text-gray-500 text-[15px] font-light">
-            Hurry - <span className="text-[#5a8bc3] font-medium">20% OFF</span> on Everything!
-          </p>
-          
-          <div className="flex items-center gap-8">
-            <div className="flex gap-5">
-              {[ {v: '12', l: 'DAYS'}, {v: '23', l: 'HRS'}, {v: '45', l: 'MINS'}, {v: '20', l: 'SECS'} ].map((time, i) => (
-                <div key={i} className="flex flex-col items-center justify-center">
-                  <span className="text-[#5a8bc3] font-light text-[18px] leading-none">{time.v}</span>
-                  <span className="text-gray-400 text-[9px] uppercase tracking-widest mt-1.5">{time.l}</span>
-                </div>
-              ))}
-            </div>
-            <button className="bg-[#5a8bc3] hover:bg-blue-600 text-white px-6 py-2 text-[14px] font-medium rounded transition-colors ml-2">
-              Quick Enquiry
-            </button>
-          </div>
-        </div>
+    <section className="relative w-full h-[650px] lg:h-[750px] flex items-center overflow-hidden font-sans">
+      {/* Background Image & Dark Blue Overlay */}
+      <div 
+        className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url('https://images.unsplash.com/photo-1532187863486-abf9db0c20a9?q=80&w=2000&auto=format&fit=crop')` }}
+      >
+        <div className="absolute inset-0 bg-[#314a66]/90 mix-blend-multiply"></div>
+        <div className="absolute inset-0 bg-[#253a52]/60"></div>
       </div>
 
-      {/* Main Hero Content */}
-      <div className="max-w-[1600px] mx-auto px-6 lg:px-12 pt-16 pb-32 relative">
+      {/* Main Content Container */}
+      <div className="relative z-10 max-w-[1600px] w-full mx-auto px-6 lg:px-12 pt-10">
         <motion.div 
-          className="max-w-[900px] mx-auto lg:mx-0 lg:ml-8 xl:ml-20"
+          className="max-w-[950px]"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
         >
           {/* Small Heading */}
-          <motion.div variants={itemVariants} className="text-[17px] mb-4">
-            <span className="text-gray-400 font-light">Built for </span>
-            <span className="text-gray-700 font-normal tracking-wide">Innovation</span>
+          <motion.div variants={itemVariants} className="text-[17px] text-gray-300 font-light mb-4">
+            Built for Innovation
           </motion.div>
           
           {/* Main Title */}
           <motion.h1 
             variants={itemVariants}
-            className="text-[48px] sm:text-[60px] lg:text-[72px] leading-[1.15] text-[#5a8bc3] font-light mb-8 tracking-tight"
+            className="text-[42px] sm:text-[52px] lg:text-[58px] leading-[1.2] text-white font-light mb-6 tracking-tight"
           >
-            India's Integrated Research<br className="hidden md:block" /> Platform
+            The Integrated Research Ecosystem for End-to-End<br className="hidden md:block" /> Scientific Outcomes.
           </motion.h1>
           
           {/* Description */}
           <motion.p 
             variants={itemVariants}
-            className="text-[19px] md:text-[21px] text-gray-500 font-light leading-[1.7] max-w-[700px] mb-12"
+            className="text-[17px] md:text-[19px] text-gray-300 font-light leading-[1.6] max-w-[650px] mb-14"
           >
-            Imagine the future of healthcare, where breakthroughs in bioscience and<br className="hidden md:block" /> technology come together to{' '}
-            <span className="bg-[#5a8bc3] text-white px-4 py-[6px] rounded-md font-medium shadow-[0_4px_14px_rgba(90,139,195,0.4)] inline-block mx-1 transform -translate-y-0.5">
-              redefine
-            </span>
-            {' '}what's possible.
+            From study design and laboratory testing to complete research and development with commercialization support.
           </motion.p>
           
-          {/* Category Cards */}
+          {/* Feature Cards (Glass Effect) */}
           <motion.div 
             variants={itemVariants}
-            className="flex flex-wrap gap-5"
+            className="flex flex-col md:flex-row gap-5"
           >
-            {['Products', 'Laboratory', 'Research', 'Technology'].map((item) => (
-              <motion.button
-                key={item}
-                whileHover={{ y: -3 }}
-                whileTap={{ y: 0 }}
-                className="px-8 py-[18px] bg-[#f4f7fa] text-[#5a8bc3] text-[16px] font-light rounded-sm transition-all hover:bg-[#e9eff5] min-w-[140px]"
+            {cards.map((card, index) => (
+              <motion.div
+                key={index}
+                whileHover={{ y: -5, backgroundColor: "rgba(255, 255, 255, 0.25)" }}
+                className="relative bg-white/15 backdrop-blur-md rounded-md p-6 h-[130px] flex flex-col justify-between cursor-pointer w-full md:w-[280px] transition-colors overflow-hidden border border-white/10"
               >
-                {item}
-              </motion.button>
+                <div className="text-[10px] text-white/90 uppercase tracking-[0.15em] text-right font-medium">
+                  {card.label}
+                </div>
+                <div className="flex justify-between items-end mt-4">
+                  <h3 className="text-white text-[20px] font-light">
+                    {card.title}
+                  </h3>
+                  <ArrowRight className="text-[#21354b] w-6 h-6" strokeWidth={3} /> 
+                </div>
+              </motion.div>
             ))}
           </motion.div>
         </motion.div>
-      </div>
-
-      {/* Sticky Right Button */}
-      <div className="hidden xl:block fixed right-0 top-1/2 transform -translate-y-1/2 z-50">
-        <div 
-          className="bg-[#5a8bc3] text-white px-3 py-8 rounded-l-md shadow-lg cursor-pointer hover:bg-blue-600 transition-colors flex items-center justify-center"
-        >
-          <span 
-            className="text-[15px] font-medium tracking-wide whitespace-nowrap" 
-            style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}
-          >
-            Create an Account
-          </span>
-        </div>
       </div>
     </section>
   );
