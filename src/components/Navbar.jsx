@@ -62,9 +62,12 @@ const Navbar = () => {
                 <Search className="w-[20px] h-[20px]" strokeWidth={2.5} />
               </button>
               
-              <a href="#" className="text-[#364f6b] hover:text-[#253950] text-[15px] font-medium transition-colors">
+              <button 
+                onClick={() => alert("Login page coming soon")}
+                className="text-[#364f6b] hover:text-[#253950] text-[15px] font-medium transition-colors"
+              >
                 Login/Register
-              </a>
+              </button>
               
               <button className="w-10 h-10 bg-[#364f6b] hover:bg-[#253950] flex items-center justify-center rounded-full transition-colors ml-2">
                 <User className="w-[20px] h-[20px] text-white" />
