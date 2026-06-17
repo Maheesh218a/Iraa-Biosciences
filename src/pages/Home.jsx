@@ -23,10 +23,17 @@ export default function Home() {
         <ResearchSolutions />
         <Partners />
         <Statistics />
-        <ResearchMonth />
+        
+        {/* Research & Articles Side-by-Side Section */}
+        <section className="w-full bg-white font-sans py-12 lg:py-20 border-b border-gray-100">
+          <div className="max-w-[1600px] mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-8 xl:gap-20">
+            <ResearchMonth />
+            <Articles />
+          </div>
+        </section>
+
         <InnovationHub />
         <Dashboard />
-        <Articles />
         <Testimonials />
       </main>
 
