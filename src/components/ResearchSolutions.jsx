@@ -1,4 +1,4 @@
-import React from 'react';
+import 'react';
 import { Hexagon, CircleDashed, Activity, Zap, Beaker } from 'lucide-react';
 
 const ResearchSolutions = () => {
