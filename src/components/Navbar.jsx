@@ -1,118 +1,94 @@
-import { useState } from 'react';
-import { Menu, X } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { Search, User } from 'lucide-react';
 
 const Navbar = () => {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-  const navLinks = [
-    { name: 'Solutions', href: '#' },
-    { name: 'Track Order', href: '#' },
-    { name: 'Partnerships', href: '#' },
-    { name: 'IRC Associates', href: '#' },
-    { name: 'Enterprise', href: '#' },
+  const bottomLinks = [
+    'Explore',
+    'Partners',
+    'Resources',
+    'Events',
+    'Institutions',
+    'Bulk Order',
+    'Status Tracker',
+    'Careers',
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm border-b border-gray-100">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
-          {/* Logo Area */}
-          <div className="flex-shrink-0 flex items-center">
-            <a href="/" className="flex items-center gap-2 group">
-              <span className="text-2xl font-extrabold tracking-tight">
-                <span className="text-green-600 group-hover:text-green-700 transition-colors">Iraa</span> 
-                <span className="text-gray-900"> Biosciences</span>
-              </span>
-            </a>
-          </div>
+    <header className="w-full bg-white font-sans">
+      {/* Top Tier */}
+      <div className="w-full border-b border-gray-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-20">
+            
+            {/* Logo Area */}
+            <div className="flex items-center gap-2">
+              <div className="flex flex-col">
+                <div className="w-4 h-4 bg-blue-600 rounded-tl-full shrink-0"></div>
+                <div className="w-4 h-8 bg-blue-600 shrink-0"></div>
+              </div>
+              <div className="flex flex-col leading-tight mt-1">
+                <span className="text-[22px] text-gray-700 tracking-wide">Iraa</span>
+                <span className="text-[22px] text-gray-400 font-light tracking-wide">Biosciences</span>
+              </div>
+            </div>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden lg:flex space-x-8">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                className="text-gray-600 hover:text-green-600 font-medium text-sm transition-colors duration-200"
-              >
-                {link.name}
-              </a>
-            ))}
-          </nav>
+            {/* Search Bar */}
+            <div className="hidden md:flex items-center border border-gray-300 rounded overflow-hidden">
+              <button className="px-4 py-2 text-blue-500 bg-white border-r border-gray-300 text-sm hover:bg-gray-50">
+                Search All
+              </button>
+              <input 
+                type="text" 
+                placeholder="Search products, resources, etc..." 
+                className="px-4 py-2 w-96 outline-none text-sm text-gray-600 placeholder-gray-400"
+              />
+              <button className="px-3 py-2 text-blue-500 bg-white hover:bg-gray-50">
+                <Search className="w-4 h-4" />
+              </button>
+            </div>
 
-          {/* Right Side Buttons */}
-          <div className="hidden lg:flex items-center space-x-6">
-            <a
-              href="#"
-              className="text-gray-600 hover:text-green-600 font-medium text-sm transition-colors duration-200"
-            >
-              Login / Register
-            </a>
-            <a
-              href="#"
-              className="bg-green-600 hover:bg-green-700 text-white px-6 py-2.5 rounded-full font-medium text-sm transition-all duration-200 shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
-            >
-              Bulk Order
-            </a>
-          </div>
+            {/* Right Side Actions */}
+            <div className="flex items-center gap-3">
+              <button className="bg-gray-800 hover:bg-gray-700 text-white px-4 py-2 rounded text-sm font-medium transition-colors">
+                Associates
+              </button>
+              <button className="bg-[#4b82c3] hover:bg-blue-600 text-white px-4 py-2 rounded text-sm font-medium transition-colors">
+                Enterprise
+              </button>
+              <button className="bg-gray-100 hover:bg-gray-200 p-2 rounded-full transition-colors ml-2">
+                <User className="w-5 h-5 text-gray-600" />
+              </button>
+            </div>
 
-          {/* Mobile Menu Toggle */}
-          <div className="lg:hidden flex items-center">
-            <button
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="text-gray-500 hover:text-green-600 focus:outline-none p-2 transition-colors rounded-md hover:bg-green-50"
-              aria-label="Toggle mobile menu"
-              aria-expanded={isMobileMenuOpen}
-            >
-              {isMobileMenuOpen ? (
-                <X className="h-6 w-6" />
-              ) : (
-                <Menu className="h-6 w-6" />
-              )}
-            </button>
           </div>
         </div>
       </div>
 
-      {/* Mobile Navigation */}
-      <AnimatePresence>
-        {isMobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3, ease: 'easeInOut' }}
-            className="lg:hidden bg-white border-t border-gray-100 overflow-hidden"
-          >
-            <div className="px-4 pt-2 pb-6 space-y-1 shadow-inner">
-              {navLinks.map((link) => (
+      {/* Bottom Tier */}
+      <div className="w-full border-b border-gray-200 bg-white hidden lg:block">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-12">
+            
+            {/* Left Links */}
+            <nav className="flex space-x-8">
+              {bottomLinks.map((link) => (
                 <a
-                  key={link.name}
-                  href={link.href}
-                  className="block px-3 py-3 text-base font-medium text-gray-700 hover:text-green-600 hover:bg-green-50 rounded-md transition-colors"
+                  key={link}
+                  href="#"
+                  className="text-gray-500 hover:text-blue-600 text-[14px] font-normal transition-colors"
                 >
-                  {link.name}
+                  {link}
                 </a>
               ))}
-              
-              <div className="pt-5 mt-5 border-t border-gray-100 flex flex-col space-y-4 px-3">
-                <a
-                  href="#"
-                  className="text-center text-gray-700 hover:text-green-600 font-medium transition-colors"
-                >
-                  Login / Register
-                </a>
-                <a
-                  href="#"
-                  className="text-center bg-green-600 hover:bg-green-700 text-white px-5 py-3 rounded-full font-medium transition-colors shadow-md"
-                >
-                  Bulk Order
-                </a>
-              </div>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+            </nav>
+
+            {/* Right Link */}
+            <a href="#" className="text-blue-600 hover:text-blue-700 text-[14px] font-medium transition-colors">
+              Iraa Bio Advanced
+            </a>
+            
+          </div>
+        </div>
+      </div>
     </header>
   );
 };
