@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const Linkedin = ({ className }) => (
   <svg className={className} viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -25,6 +25,15 @@ const Youtube = ({ className }) => (
 );
 
 const Footer = () => {
+  const [email, setEmail] = useState('');
+
+  const handleSubscribe = () => {
+    if (email) {
+      alert("Thank you for subscribing!");
+      setEmail('');
+    }
+  };
+
   return (
     <footer className="w-full bg-white font-sans pt-20 pb-10 border-t border-gray-100">
       <div className="max-w-[1600px] mx-auto px-6 lg:px-12">
@@ -56,11 +65,16 @@ const Footer = () => {
             
             <div className="flex w-full max-w-[320px] h-[38px] bg-[#5a8bc3] p-0.5 rounded-[1px]">
               <input 
-                type="text" 
+                type="email" 
                 placeholder="Enter your email" 
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 className="flex-1 bg-transparent text-white placeholder-white/80 px-3 text-[12px] font-light outline-none"
               />
-              <button className="bg-white text-[#5a8bc3] text-[12px] font-medium px-5 hover:bg-gray-50 transition-colors">
+              <button 
+                onClick={handleSubscribe}
+                className="bg-white text-[#5a8bc3] text-[12px] font-medium px-5 hover:bg-gray-50 transition-colors"
+              >
                 Subscribe
               </button>
             </div>

@@ -50,6 +50,7 @@ const Articles = () => {
         {articles.map((article) => (
           <motion.div 
             key={article.id}
+            onClick={() => alert("Opening research article")}
             whileHover={{ y: -3 }}
             className="flex flex-col sm:flex-row gap-6 group cursor-pointer"
           >

@@ -73,6 +73,7 @@ const Hero = () => {
             {cards.map((card, index) => (
               <motion.div
                 key={index}
+                onClick={() => alert(`${card.title} action triggered`)}
                 whileHover={{ y: -5, backgroundColor: "rgba(255, 255, 255, 0.25)" }}
                 className="relative bg-white/15 backdrop-blur-md rounded-md p-6 h-[130px] flex flex-col justify-between cursor-pointer w-full md:w-[280px] transition-colors overflow-hidden border border-white/10"
               >

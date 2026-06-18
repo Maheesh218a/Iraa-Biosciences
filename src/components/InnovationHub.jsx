@@ -95,14 +95,14 @@ const InnovationHub = () => {
                 </p>
                 
                 <div className="flex flex-col gap-3 text-[13px] text-white font-light mt-auto">
-                  <a href="#" className="hover:text-blue-200 transition-colors w-fit">
+                  <a href="#" onClick={(e) => { e.preventDefault(); alert("Partner request started"); }} className="hover:text-blue-200 transition-colors w-fit">
                     Partner with Iraa ↗
                   </a>
                   <div className="flex flex-wrap items-center gap-4">
-                    <a href="#" className="hover:text-blue-200 transition-colors">
+                    <a href="#" onClick={(e) => { e.preventDefault(); alert("Try IRC action triggered"); }} className="hover:text-blue-200 transition-colors">
                       Try - IRC ↗
                     </a>
-                    <a href="#" className="hover:text-blue-200 transition-colors">
+                    <a href="#" onClick={(e) => { e.preventDefault(); alert("Associate action triggered"); }} className="hover:text-blue-200 transition-colors">
                       Associate ↗
                     </a>
                   </div>

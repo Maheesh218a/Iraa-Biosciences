@@ -74,7 +74,8 @@ const ResearchSolutions = () => {
           {marqueeLogos.map((logo, index) => (
             <div 
               key={index} 
-              className="flex items-center justify-center opacity-40 hover:opacity-100 transition-opacity duration-300 cursor-pointer px-10 grayscale hover:grayscale-0"
+              onClick={() => alert("Partner selected")}
+              className="flex items-center justify-center opacity-40 hover:opacity-100 transition-opacity duration-300 cursor-pointer px-10 grayscale hover:grayscale-0 hover:scale-105 transform"
             >
               {logo.icon}
               <div className="flex flex-col justify-center">
