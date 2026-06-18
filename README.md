@@ -1,16 +1,68 @@
-# React + Vite
+# Iraa Biosciences
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to **Iraa Biosciences**, a modern web platform built for simplified research solutions and innovation. 
 
-Currently, two official plugins are available:
+🌍 **Live Demo:** [https://iraa-biosciences-vfx7.vercel.app/](https://iraa-biosciences-vfx7.vercel.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Overview
 
-## React Compiler
+Iraa Biosciences is a sleek, responsive React application designed to showcase comprehensive research solutions, innovation hubs, and detailed platform statistics. It features a modern design with smooth animations and a rich user interface tailored specifically for the biosciences and research community.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## ✨ Features
 
-## Expanding the ESLint configuration
+- **Dynamic Hero & Services:** Engaging introductory sections highlighting core offerings.
+- **Research Solutions:** Detailed insights into specialized research solutions and services.
+- **Partners & Statistics:** Showcasing trusted partners and the platform's impact through data visualization.
+- **Research & Articles:** Dedicated sections highlighting the "Research of the Month" alongside the latest articles.
+- **Innovation Hub & Dashboard:** Interactive components for tracking innovation metrics and providing user dashboards.
+- **Testimonials:** Real feedback and success stories from the community.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Tech Stack
+
+- **Framework:** [React 19](https://react.dev/)
+- **Build Tool:** [Vite](https://vitejs.dev/)
+- **Styling:** [Tailwind CSS v4](https://tailwindcss.com/)
+- **Animations:** [Framer Motion](https://www.framer.com/motion/)
+- **Icons:** [Lucide React](https://lucide.dev/)
+
+## 📦 Getting Started
+
+To get a local copy up and running, follow these simple steps.
+
+### Prerequisites
+
+Make sure you have [Node.js](https://nodejs.org/) and npm installed on your machine.
+
+### Installation
+
+1. **Clone the repository:**
+   ```bash
+   git clone <repository-url>
+   cd Iraa-Biosciences
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+3. **Run the development server:**
+   ```bash
+   npm run dev
+   ```
+
+4. **Build for production:**
+   ```bash
+   npm run build
+   ```
+
+## 📜 Scripts
+
+- `npm run dev` - Starts the Vite development server with Hot Module Replacement (HMR).
+- `npm run build` - Bundles the application for production deployment.
+- `npm run preview` - Previews the built production app locally.
+- `npm run lint` - Runs ESLint to maintain code quality.
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are always welcome! Feel free to check the issues page if you want to contribute.
